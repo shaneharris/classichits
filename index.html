@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width">
     <title>Classic Hits</title>
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.0/dist/aframe-altspace-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.1/dist/aframe-altspace-component.min.js"></script>
+    <script src="http://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
 </head>
 
 <body>
-<a-scene altspace=fullspace:true>
+<a-scene altspace=fullspace:true  sync-system="author: faerain; app: classichits">
     <a-assets></a-assets>
 
     <!--sky-->
@@ -423,6 +424,19 @@
     <a-plane src="images/e1Shpyg.jpg" height=".5" width=".5" rotation="0 90 0" radius="2" side="double"
              position="-13.85 6.4 -11.056">
     </a-plane>
+
+    <a-entity position="-12.85 5.4 -12.635">
+        <a-entity id="pc-rick" n-sound="on: rick-roll; src: rick.ogg; rolloff: cosine; maxDistance: 6"
+            sync="own-on: rick-roll" sync-n-sound></a-entity>
+        <a-entity id="gear-rick" n-sound="on: rick-roll; src: rick.mp3; rolloff: cosine; maxDistance: 6"
+            sync="own-on: rick-roll" sync-n-sound></a-entity>
+        <a-box altspace-cursor-collider="enabled: true"
+            scale="0.1 0.1 0.1" material="color: green; transparent: true; opacity: 0.2"
+            wire="on: click; emit: rick-roll; targets: #pc-rick, #gear-rick;">
+            <a-animation attribute="opacity" from="0.2" to="1.0" duration="200" begin="mouseenter"></a-animation>
+            <a-animation attribute="opacity" from="1.0" to="0.2" duration="200" begin="mouseleave"></a-animation>
+        </a-box>
+    </a-entity>
 
     <!--teddy bear -->
     <a-plane src="images/sG135SN.jpg" height=".5" width=".5" rotation="0 90 0" radius="2" side="double"
