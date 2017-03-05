@@ -12,7 +12,15 @@
 
 <body>
 <a-scene altspace=fullspace:true  sync-system="author: faerain; app: classichits">
-    <a-assets></a-assets>
+    <a-assets>
+    <a-asset-item id="pick-obj" src="assets/couches.obj"></a-asset-item>
+    <a-asset-item id="pick-mtl" src="assets/couches.mtl"></a-asset-item>
+
+    </a-assets>
+    
+    <a-entity obj-model="obj: #couches-obj; mtl: #couches-mtl" rotation="0 90 0" 
+    material="repeat: 3 3; transparent: true; opacity: 0.5">
+</a-entity>
 
     <!--sky-->
     <a-sky radius="130" src="images/bL3nzOy.jpg" segments-width="10" position="0 -10 35" segments-height="20"></a-sky>
