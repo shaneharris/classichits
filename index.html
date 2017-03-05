@@ -15,10 +15,16 @@
     <a-assets>
     <a-asset-item id="couches-obj" src="assets/couches.obj"></a-asset-item>
     <a-asset-item id="couches-mtl" src="assets/couches.mtl"></a-asset-item>
+    <a-asset-item id="couches-obj" src="assets/carpet.obj"></a-asset-item>
+    <a-asset-item id="couches-mtl" src="assets/carpet.mtl"></a-asset-item>
 
     </a-assets>
     
     <a-entity obj-model="obj: #couches-obj; mtl: #couches-mtl" rotation="0 90 0" 
+    material="repeat: 3 3; transparent: true; opacity: 0.5">
+</a-entity>
+    
+        <a-entity obj-model="obj: #carpet-obj; mtl: #carpet-mtl" rotation="0 90 0" 
     material="repeat: 3 3; transparent: true; opacity: 0.5">
 </a-entity>
 
