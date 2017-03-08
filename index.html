@@ -6,8 +6,49 @@
     <meta name="viewport" content="width=device-width">
     <title>Classic Hits</title>
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.1/dist/aframe-altspace-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.4.0/dist/aframe-altspace-component.min.js"></script>
     <script src="https://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
+    
+    <script>
+    altspace.getThreeJSTrackingSkeleton().then(function (skeleton) {
+          window.head = skeleton.getJoint('Head');
+        });
+        AFRAME.registerComponent('altspace-look-at', {
+          init: function () {
+            if (!window.altspace || !altspace.inClient) { return; }
+          },
+          tick: function () {
+            if (!window.head || !this.el.object3D) { return; }
+            this.el.object3D.lookAt(window.head.position); 
+          }
+        })
+  </script>
+  <script>
+    // n-skeleton-parent only works with root meshes at the moment. Since most model loaders use a root
+    // container object, we need to collapse the model so that n-skeleton-parent can access the mesh directly.
+    AFRAME.registerComponent('collapse-model', {
+        init: function () {
+            this.el.addEventListener('model-loaded', function () {
+                this.el.object3DMap.mesh.updateMatrixWorld();
+                var mesh;
+                this.el.object3DMap.mesh.traverse(function (obj) {
+                    if (!mesh && obj instanceof THREE.Mesh) {
+                        mesh = obj;
+                    }
+                }.bind(this))
+                if (mesh) {
+                    mesh.scale.copy(mesh.getWorldScale());
+                    this.el.setObject3D('mesh', mesh);
+                    // setObject3D emits this event in a-frame 0.4.0
+                    this.el.emit('object3dset', {
+                        type: 'mesh'
+                    });
+                }
+            }.bind(this));
+        }
+    });
+  </script>
+    
 </head>
 
 <body>
@@ -18,6 +59,12 @@
     <a-asset-item id="carpet-obj" src="assets/carpet.obj"></a-asset-item>
     <a-asset-item id="carpet-mtl" src="assets/carpet.mtl"></a-asset-item>
 
+    <a-asset-item id="model1" src="https://rawgit.com/Lia021/model/master/mic/mic4.dae"></a-asset-item>
+         
+         <a-mixin id="model1" collada-model="#model1" collapse-model></a-mixin>
+
+        <a-mixin id="parent-to-right-hand" position="-0.08 -0.03 -0.08" scale="1.3 1.3 1.3"rotation="90 -90 0" n-skeleton-parent="part: hand; side: right;" sync sync-n-skeleton-parent></a-mixin>    
+        
     </a-assets>
     
     <!--couches objects -->
@@ -35,6 +82,9 @@
 
     <!--a-plane> Everything you want blocked out example </a-plane-->
     
+     <!--Interactable mic-->
+
+      <a-entity position="3 0.50 12" mixin="model1"rotation="-60 90 0"scale="1.5 1.5 1.5" instantiator="on: click;group: model1; mixin: model1 parent-to-right-hand"></a-entity>
     
     <!--main sign -->
     <a-plane src="images/rainbowroomwelcomesign.png" height="5" width="11.2" rotation="0 180 0" radius="2" side="double"
