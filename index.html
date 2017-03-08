@@ -70,30 +70,13 @@
                 <a-mixin id="sphere" geometry="primitive: sphere; radius: 0.2">
         </a-mixin>
         
-    <!--we are going to take this away soon-->
-        <a-mixin id="random-1"
-                 random-spherical-position="lengthX: 180; lengthY: 180; radius: 10"></a-mixin>
-        <a-mixin id="random-2" random-spherical-position="radius: 30"></a-mixin>
-        <a-mixin id="random-3" random-spherical-position="radius: 50"></a-mixin>
-
-        <a-mixin id="red" material="color: #FF4B68"></a-mixin>
-        <a-mixin id="blue" material="color: #118DF0"></a-mixin>
-        <a-mixin id="yellow" material="color: #FBFFA3"></a-mixin>
-        
+   
+ 
     </a-assets>
     
     
-
- <!--we are going to take this away soon-->
-      <a-entity entity-generator="mixin: random-1 red sphere; num: 500"></a-entity>
-      <a-entity entity-generator="mixin: random-2 blue sphere; num: 800">
-        <a-animation attribute="rotation" repeat="indefinite" easing="linear"
-                     dur="128000" to="0 360 0"></a-animation>
-      </a-entity>
-      <a-entity entity-generator="mixin: random-3 yellow sphere; num: 2000"></a-entity>
     
-    
-    <!--couches objects -->
+ <!--couches objects -->
     <a-entity obj-model="obj: #couches-obj; mtl: #couches-mtl" rotation="0 90 0" altspace-cursor-collider="enabled: false" 
     material="repeat: 3 3; transparent: true; opacity: 0.5">
 </a-entity>
@@ -107,6 +90,12 @@
     <a-sky radius="130" src="images/bL3nzOy.jpg" segments-width="10" position="0 -10 35" segments-height="20"></a-sky>
 
     <!--a-plane> Everything you want blocked out example </a-plane-->
+    
+    <!--just checking this out->
+    <a-entity geometry="primitive: box"
+              random-position random-rotation random-scale></a-entity>
+
+
     
      <!--Interactable mic-->
 
