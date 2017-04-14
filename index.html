@@ -94,6 +94,8 @@
     <a-asset-item id="couches-mtl" src="assets/couches.mtl"></a-asset-item>
     <a-asset-item id="carpet-obj" src="assets/carpet.obj"></a-asset-item>
     <a-asset-item id="carpet-mtl" src="assets/carpet.mtl"></a-asset-item>
+    <a-asset-item id="mediumdoughnut1-obj" src="assets/mediumdoughnut1.obj"></a-asset-item>
+    <a-asset-item id="mediumdoughnut1-mtl" src="assets/mediumdoughnut1.mtl"></a-asset-item>
 
    <a-asset-item id="model1" src="https://rawgit.com/Lia021/model/master/mic/mic4.dae"></a-asset-item>
          <a-mixin id="model1" collada-model="#model1" collapse-model></a-mixin>
@@ -104,7 +106,10 @@
         
     </a-assets>
     
-    
+ <!--Doughnut 1 object -->
+    <a-entity obj-model="obj: #mediumdoughnut1-obj; mtl: #mediumdoughnut1-mtl" rotation="0 90 0" altspace-cursor-collider="enabled: false" 
+    material="repeat: 3 3; transparent: true; opacity: 0.5">
+</a-entity>
     
  <!--couches objects -->
     <a-entity obj-model="obj: #couches-obj; mtl: #couches-mtl" rotation="0 90 0" altspace-cursor-collider="enabled: false" 
@@ -663,7 +668,8 @@
     <a-plane src="images/e1Shpyg.jpg" height=".5" width=".5" rotation="0 90 0" radius="2" side="double"
              position="-13.85 6.4 -11.056">
     </a-plane>
-
+    
+    <!--Rickroll -->
     <a-entity position="-12.85 5.4 -12.635">
         <a-entity id="pc-rick" n-sound="on: rick-roll; src: rick.ogg; rolloff: cosine; maxDistance: 6"
             sync="own-on: rick-roll" sync-n-sound></a-entity>
