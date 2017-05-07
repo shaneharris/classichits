@@ -303,8 +303,7 @@
     
     
      <!--first from left black musical note above juke box-->
-    <a-plane src="images/lgnB5S2.png" height="1" width=".5" rotation="0 -68 0" radius="2" side="double"
-             position="11.7 5 12.95" transparent="true">
+    <a-entity position='11.7 5 12.95' scale='1 1 1' obj-vertex="assets/rednote.obj" rotation='260 0 0'>
         <a-animation attribute="position"
                      
                      from='11.9 4 21.5' to='11.9 5.8 21.5'
@@ -312,7 +311,9 @@
                      dur='2561'
                      repeat='indefinite'></a-animation>
                
-        </a-plane> 
+        </a-entity> 
+    
+  
 
 
     <!--2 black musical note above juke box-->
