@@ -84,6 +84,38 @@
         THREE.TextureLoader.prototype.load = getTexture;
     </script>
     
+      <!--Script for loading vertex color models-->
+<script src="https://cdn.rawgit.com/Sean-Bradley/objVertexColors/d0bd3e96/OBJVertexColorLoader.js"></script>
+<script>
+  AFRAME.registerComponent('obj-vertex', {
+    schema: { type: 'string' },
+    init: function () {
+      this.model = null;
+      this.objLoader = new THREE.OBJVertexColorLoader();
+    },
+    update: function () {
+      var data = this.data;
+      this.remove();
+      this.loadObj(data);
+    },
+    remove: function () {
+      if (!this.model) { return; }
+      this.el.removeObject3D('mesh');
+    },
+    loadObj: function (objUrl) {
+      var self = this;
+      var el = this.el;
+      var objLoader = this.objLoader;
+      objLoader.load(objUrl, function (objModel) {
+        self.model = objModel;
+        el.setObject3D('mesh', objModel);
+        el.emit('model-loaded', {format: 'obj', model: objModel});
+      });
+    }
+  });
+</script>
+
+    
 </head>
 
     
@@ -96,7 +128,7 @@
     <a-asset-item id="carpet-mtl" src="assets/carpet.mtl"></a-asset-item>
     <a-asset-item id="d1-obj" src="assets/d1.obj"></a-asset-item>
     <a-asset-item id="d1-mtl" src="assets/d1.mtl"></a-asset-item>
-    <a-asset-item id="note-obj" src="assets/note.obj"></a-asset-item>
+    
 
 
    <a-asset-item id="model1" src="https://rawgit.com/Lia021/model/master/mic/mic4.dae"></a-asset-item>
@@ -119,7 +151,9 @@
  <a-entity position="3.6 .1 1.10"obj-model="obj: #d1-obj; mtl: #d1-mtl" rotation="260 0 0"></a-entity>
     
  <!--note object? -->
- <a-entity position="3.6 .1 1.10"obj-model="obj: #note-obj" rotation="260 0 0"></a-entity>
+ <a-entity position='3.6 .1 1.10' scale='1 1 1' obj-vertex="assets/notes.obj" rotation='260 0 0'></a-entity>
+    
+   
 
 <!--Surfboard object
     <a-plane src="images/surfimage.png" height="1" width="4" rotation="0 90 0" radius="2" side="double"
