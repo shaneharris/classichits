@@ -281,86 +281,129 @@ oceanobject commented out
         <a-animation attribute="rotation" dur="11500" fill="backwards" to="0 360 -20" repeat="indefinite"
                      easing="linear"></a-animation>
     </a-plane> -->
-    
+    <!--Load Note Assets-->
+    <a-assets>
+        <a-asset-item 
+            id="purplenote" 
+            src="assets/purplenote.obj">
+        </a-asset-item>
+    </a-assets>
     
      <!--red note-->
-    <a-entity position='13.3 1.1 12.95' scale='3 3 3' obj-vertex="assets/rednote.obj" rotation='260 80 0'>
-        <a-animation attribute="position"
-                     
-                     from='13.3 1.1 21.5' to='13.3 8.8 21.5'
-                     easing='ease-in'
-                     dur='2561'
-                     repeat='indefinite'></a-animation>
-               
-        </a-entity> 
+    <a-entity 
+        position='13.3 1.1 12.95' 
+        scale='3 3 3' 
+        obj-vertex="#purplenote" 
+        rotation='260 80 0'>
+        <a-animation 
+            attribute="position"
+            from='13.3 1.1 21.5' 
+            to='13.3 8.8 21.5'
+            easing='ease-in'
+            dur='2561'
+            repeat='indefinite'>
+        </a-animation>
+    </a-entity> 
     
          <!--blue note-->
-    <a-entity position='13.3 1 12.95' scale='3 3 3' obj-vertex="assets/bluenote.obj" rotation='260 80 0'>
-        <a-animation attribute="position"
-                     
-                     from='13.3 1 21.9' to='13.3 6 21.9'
-                     easing='ease-in'
-                     dur='4527'
-                     repeat='indefinite'></a-animation>
+    <a-entity 
+        position='13.3 1 12.95' 
+        scale='3 3 3' 
+        obj-vertex="#purplenote" 
+        rotation='260 80 0'>
+        <a-animation 
+            attribute="position"
+            from='13.3 1 21.9' 
+            to='13.3 6 21.9'
+            easing='ease-in'
+            dur='4527'
+            repeat='indefinite'>
+        </a-animation>
                
         </a-entity> 
     
     
              <!--pink note-->
-    <a-entity position='13.3 1 22.25' scale='3 3 3' obj-vertex="assets/pinknote.obj" rotation='260 80 0'>
-        <a-animation attribute="position"
-                     
-                     from='13.3 1 22.25' to='13.3 6 22.25'
-                     easing='ease-in'
-                     dur='6527'
-                     repeat='indefinite'></a-animation>
-               
-        </a-entity> 
+    <a-entity 
+        position='13.3 1 22.25' 
+        scale='3 3 3' 
+        obj-vertex="#purplenote" 
+        rotation='260 80 0'>
+        <a-animation 
+            attribute="position"
+            from='13.3 1 22.25' \
+            to='13.3 6 22.25'
+            easing='ease-in'
+            dur='6527'
+            repeat='indefinite'>
+        </a-animation>
+    </a-entity> 
     
                  <!--green note-->
-    <a-entity position='13.3 1 23.25' scale='3 3 3' obj-vertex="assets/greennote.obj" rotation='260 80 0'>
-        <a-animation attribute="position"
-                     
-                     from='13.3 1 23.25' to='13.3 6 23.25'
-                     easing='ease-in'
-                     dur='2527'
-                     repeat='indefinite'></a-animation>
+    <a-entity 
+        position='13.3 1 23.25' 
+        scale='3 3 3' 
+        obj-vertex="#purplenote" 
+        rotation='260 80 0'>
+        <a-animation 
+            attribute="position"
+            from='13.3 1 23.25' 
+            to='13.3 6 23.25'
+            easing='ease-in'
+            dur='2527'
+            repeat='indefinite'>
+        </a-animation>
                
-        </a-entity> 
+    </a-entity> 
     
         
                  <!--orange note-->
-    <a-entity position='13.3 1 22.75' scale='3 3 3' obj-vertex="assets/orangenote.obj" rotation='260 80 0'>
-        <a-animation attribute="position"
-                     
-                     from='13.3 1 22.75' to='13.3 6 22.75'
-                     easing='ease-in'
-                     dur='8527'
-                     repeat='indefinite'></a-animation>
-               
-        </a-entity> 
+    <a-entity 
+        position='13.3 1 22.75' 
+        scale='3 3 3' 
+        obj-vertex="#purplenote" 
+        rotation='260 80 0'>
+        <a-animation 
+            attribute="position"
+            from='13.3 1 22.75' 
+            to='13.3 6 22.75'
+            easing='ease-in'
+            dur='8527'
+            repeat='indefinite'>
+        </a-animation>
+    </a-entity> 
     
                      <!--purple note-->
-    <a-entity position='13.3 1 23.40' scale='3 3 3' obj-vertex="assets/purplenote.obj" rotation='260 80 0'>
-        <a-animation attribute="position"
-                     
-                     from='13.3 1 23.40' to='13.3 6 23.40'
-                     easing='ease-in'
-                     dur='5527'
-                     repeat='indefinite'></a-animation>
-               
-        </a-entity> 
+    <a-entity 
+        position='13.3 1 23.40' 
+        scale='3 3 3' 
+        obj-vertex="#purplenote" 
+        rotation='260 80 0'>
+        <a-animation 
+            attribute="position"
+            from='13.3 1 23.40' 
+            to='13.3 6 23.40'
+            easing='ease-in'
+            dur='5527'
+            repeat='indefinite'>
+        </a-animation>
+    </a-entity> 
     
                          <!--yellow note-->
-    <a-entity position='13.3 1 23.30' scale='3 3 3' obj-vertex="assets/yellownote.obj" rotation='260 80 0'>
-        <a-animation attribute="position"
-                     
-                     from='13.3 1 23.30' to='13.3 6 23.30'
-                     easing='ease-in'
-                     dur='7127'
-                     repeat='indefinite'></a-animation>
-               
-        </a-entity> 
+    <a-entity 
+        position='13.3 1 23.30' 
+        scale='3 3 3' 
+        obj-vertex="#purplenote" 
+        rotation='260 80 0'>
+        <a-animation 
+            attribute="position"
+            from='13.3 1 23.30' 
+            to='13.3 6 23.30'
+            easing='ease-in'
+            dur='7127'
+            repeat='indefinite'>
+        </a-animation>
+    </a-entity> 
     
               
                 
