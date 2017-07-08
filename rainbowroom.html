@@ -130,7 +130,9 @@
     <a-asset-item id="d1-obj" src="assets/d1.obj"></a-asset-item>
     <a-asset-item id="d1-mtl" src="assets/d1.mtl"></a-asset-item>
     
-
+<a-asset-item id="brush" src="https://rawgit.com/Lia021/paint-clothes/master/donut/fae%20donut.dae"></a-asset-item>
+     <a-mixin id="brush" collada-model="#brush" collapse-model></a-mixin>
+     <a-mixin id="parent-to-right-hand" position="0 -0.09 -0.062"scale="1.10 1.10 1.10"rotation="0 90 0" n-skeleton-parent="part: hand; side: right;" sync sync-n-skeleton-parent></a-mixin>
 
    <a-asset-item id="model1" src="https://rawgit.com/Lia021/model/master/mic/mic4.dae"></a-asset-item>
          <a-mixin id="model1" collada-model="#model1" collapse-model></a-mixin>
@@ -150,6 +152,8 @@
     
  <!--Doughnut 1 object -->
  <a-entity position="3.6 .1 1.10"obj-model="obj: #d1-obj; mtl: #d1-mtl" rotation="260 0 0"></a-entity>
+    -->
+ <a-entity position="3.6 .1 1.10" mixin="brush" rotation="260 0 0" instantiator="on: click;group: brush; mixin: brush parent-to-right-hand"></a-entity>
    
 <!--Surfboard object comment it all out
 
