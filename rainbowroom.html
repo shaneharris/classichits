@@ -41,6 +41,7 @@
                     }
                 }.bind(this))
                 if (mesh) {
+                    this.el.sceneEl.object3D.updateMatrixWorld(true);
                     mesh.scale.copy(mesh.getWorldScale());
                     this.el.setObject3D('mesh', mesh);
                     // setObject3D emits this event in a-frame 0.4.0
