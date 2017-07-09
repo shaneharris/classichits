@@ -128,11 +128,11 @@
     <a-asset-item id="carpet-obj" src="assets/carpet.obj"></a-asset-item>
     <a-asset-item id="carpet-mtl" src="assets/carpet.mtl"></a-asset-item>
 
-     <!--lia doughnut mixin
+     <!--lia doughnut mixin -->
 <a-asset-item id="brush" src="https://rawgit.com/Lia021/paint-clothes/master/donut/fae%20donut.dae"></a-asset-item>
      <a-mixin id="brush" collada-model="#brush" collapse-model></a-mixin>
      <a-mixin id="parent-to-right-hand" position="0 -0.09 -0.062"scale="1.10 1.10 1.10"rotation="0 90 0" n-skeleton-parent="part: hand; side: right;" sync sync-n-skeleton-parent></a-mixin>
--->
+
          <!--mic mixin-->
    <a-asset-item id="model1" src="https://rawgit.com/Lia021/model/master/mic/mic4.dae"></a-asset-item>
          <a-mixin id="model1" collada-model="#model1" collapse-model></a-mixin>
@@ -150,9 +150,9 @@
     material="repeat: 3 3; transparent: true; opacity: 0.5">
 </a-entity>
     
- <!--Doughnut 1 object 
+ <!--Doughnut 1 object  -->
  <a-entity position="3.8 1 1.10" mixin="brush" rotation="-260 0 0" instantiator="on: click;group: brush; mixin: brush parent-to-right-hand"></a-entity>
-   -->
+  
 <!--Surfboard object comment it all out
 
       <a-plane src="images/rainbowroom/surfimage.png" height="1" width="4" rotation="0 90 0" radius="2" side="double"
