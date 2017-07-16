@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fae -AltspaceVR</title>
+    <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.4.2/altspace.min.js"></script>
+    <script>THREE.PositionalAudio = THREE.Audio</script>      
+    <style type="text/css">
+      .a-enter-vr{
+        display:none;
+      }
+    </style>
+    <script>
+      AFRAME.registerComponent('collapse-model', {
+        init: function () {
+          this.el.addEventListener('model-loaded', function () {
+            this.el.setObject3D('mesh', this.el.object3DMap.mesh.children[0]);
+            // setObject3D emits this event in a-frame 0.4.0
+            this.el.emit('object3dset', {type: 'mesh'});
+          }.bind(this));
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <a-scene altspace="fullspace: true" sync-system="author: altspacevr; app: fae-scene-sync">
+      <a-assets>
+        <a-asset-item id="house-collada" src="assets/house/house.dae"></a-asset-item>
+      </a-assets>
+
+      <!-- Fae's house -->
+      <a-entity position="0 -2 0" rotation="0 0 0" scale="20 20 20" collada-model="#house-collada" altspace-cursor-collider="enabled: false" n-mesh-collider="type: environment; convex: false">
+      </a-entity>
+  </body>
+</html>
