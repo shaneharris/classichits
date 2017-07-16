@@ -28,12 +28,15 @@
       <a-assets>
         <a-asset-item id="house-collada" src="assets/house/house.dae"></a-asset-item>
         <a-asset-item id="newhouse-collada" src="assets/newhouse/newhouse.dae"></a-asset-item>
+        <a-asset-item id="brickfinal-collada" src="assets/brickfinal/brickfinal.dae"></a-asset-item>
       </a-assets>
 
       <!-- Fae's house -->
       <a-entity position="0 -2 0" rotation="0 0 0" scale="20 20 20" collada-model="#house-collada" altspace-cursor-collider="enabled: false" n-mesh-collider="type: environment; convex: false">
       </a-entity>
        <a-entity position="0 2 10" rotation="0 0 0" scale="20 20 20" collada-model="#newhouse-collada" altspace-cursor-collider="enabled: false" n-mesh-collider="type: environment; convex: false">
+      </a-entity>
+      <a-entity position="0 2 -10" rotation="0 0 0" scale="20 20 20" collada-model="#brickfinal-collada" altspace-cursor-collider="enabled: false" n-mesh-collider="type: environment; convex: false">
       </a-entity>
   </body>
 </html>
