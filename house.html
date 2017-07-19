@@ -30,9 +30,13 @@
         <a-asset-item id="newhouse-collada" src="assets/newhouse/newhouse.dae"></a-asset-item>
         <a-asset-item id="brickfinal-collada" src="assets/brickfinal/brickfinal.dae"></a-asset-item>
         <a-asset-item id="tutorialexample1-collada" src="assets/tutorialexample/tutorialexample1.dae"></a-asset-item>
+        <a-asset-item id="blocksruins-collada" src="assets/blocksruins/blocksruins.dae"></a-asset-item>
       </a-assets>
 
       <!-- Fae's house -->
+       <a-entity n-billboard n-text="fontSize: 10; text:Don't remember what this was rendered in" position="20 6 0"></a-entity>
+      <a-entity position="20 -2 0" rotation="0 0 0" scale="20 20 20" collada-model="#blocksruins-collada" altspace-cursor-collider="enabled: false" n-mesh-collider="type: environment; convex: false">
+      </a-entity>
       <a-entity n-billboard n-text="fontSize: 10; text:This was rendered with 1024x1024 textures" position="0 6 0"></a-entity>
       <a-entity position="0 -2 0" rotation="0 0 0" scale="20 20 20" collada-model="#house-collada" altspace-cursor-collider="enabled: false" n-mesh-collider="type: environment; convex: false">
       </a-entity>
