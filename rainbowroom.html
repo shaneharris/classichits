@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Classic Hits</title>
+    <title>Rainbow Room</title>
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.4.0/dist/aframe-altspace-component.min.js"></script>
     <script src="https://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
@@ -121,18 +121,14 @@
 
     
 <body>
-<a-scene altspace=fullspace:true  sync-system="author: faerain; app: classichits">
+<a-scene altspace=fullspace:true  sync-system="author: fae; app: rainbowroom">
     <a-assets>
     <a-asset-item id="couches-obj" src="assets/couches.obj"></a-asset-item>
     <a-asset-item id="couches-mtl" src="assets/couches.mtl"></a-asset-item>
     <a-asset-item id="carpet-obj" src="assets/carpet.obj"></a-asset-item>
     <a-asset-item id="carpet-mtl" src="assets/carpet.mtl"></a-asset-item>
 
-     <!--lia doughnut mixin 
-<a-asset-item id="brush" src="https://rawgit.com/Lia021/paint-clothes/master/donut/fae%20donut.dae"></a-asset-item>
-     <a-mixin id="brush" collada-model="#brush" collapse-model></a-mixin>
-     <a-mixin id="parent-to-right-hand" position="0 -0.09 -0.062"scale="1.10 1.10 1.10"rotation="0 90 0" n-skeleton-parent="part: hand; side: right;" sync sync-n-skeleton-parent></a-mixin>
--->
+    
          <!--mic mixin-->
    <a-asset-item id="model1" src="https://rawgit.com/Lia021/model/master/mic/mic4.dae"></a-asset-item>
          <a-mixin id="model1" collada-model="#model1" collapse-model></a-mixin>
@@ -145,37 +141,10 @@
     
     
     
- <!--couches objects -->
+     <!--couches objects -->
     <a-entity obj-model="obj: #couches-obj; mtl: #couches-mtl" rotation="0 90 0" altspace-cursor-collider="enabled: false" 
     material="repeat: 3 3; transparent: true; opacity: 0.5">
-</a-entity>
-    
- <!--Doughnut 1 object 
- <a-entity position="3.8 1 1.10" mixin="brush" rotation="-260 0 0" instantiator="on: click;group: brush; mixin: brush parent-to-right-hand"></a-entity>
-  -->
-<!--Surfboard object comment it all out
-
-      <a-plane src="images/rainbowroom/surfimage.png" height="1" width="4" rotation="0 90 0" radius="2" side="double"
-               position="-0.53 1.10 3.60" transparent="true">
- -    </a-plane>-->
-    
- <!-- commented all out
-    <a-plane a-plane color="red" height="6" width="6" rotation="0 90 0" radius="2" side="double"
-             position="-1.2 1.20 3.60">
-    </a-plane> 
-    
-    -keep this just incase
-        <a-plane a-plane color="red" height="6" width="6" rotation="0 90 0" radius="2" side="double"
-             position="2.5 1.20 10.5">
-    </a-plane> 
-   Surfboard object comment it all out
-    <a-plane src="images/rainbowroom/whee.png" height="5" width="3.25" rotation="0 -90 0" radius="2" side="double"
-             position="8.5 1.70 10.5">
-    </a-plane>-->
-      
-       
-    
-   
+    </a-entity>
     
      <!--carpets objects -->
         <a-entity obj-model="obj: #carpet-obj; mtl: #carpet-mtl" rotation="0 90 0" altspace-cursor-collider="enabled: false"
@@ -288,136 +257,7 @@
                      easing="linear"></a-animation>
     </a-plane>
     
-   
-
-    <!--Load Note Assets commented out
-    <a-assets>
-        <a-asset-item 
-            id="purplenote" 
-            src="assets/purplenote.obj">
-        </a-asset-item>
-    </a-assets>
-    
-     <!--red note
-    <a-entity 
-        position='13.3 1.1 12.95' 
-        scale='3 3 3' 
-        obj-vertex="#purplenote" 
-        rotation='260 80 0'>
-        <a-animation 
-            attribute="position"
-            from='13.3 1.1 21.5' 
-            to='13.3 8.8 21.5'
-            easing='ease-in'
-            dur='2561'
-            repeat='indefinite'>
-        </a-animation>
-    </a-entity> 
-    
-         <!--blue note
-    <a-entity 
-        position='13.3 1 12.95' 
-        scale='3 3 3' 
-        obj-vertex="#purplenote" 
-        rotation='260 80 0'>
-        <a-animation 
-            attribute="position"
-            from='13.3 1 21.9' 
-            to='13.3 6 21.9'
-            easing='ease-in'
-            dur='4527'
-            repeat='indefinite'>
-        </a-animation>
-               
-        </a-entity> 
-    
-    
-             <!--pink note
-    <a-entity 
-        position='13.3 1 22.25' 
-        scale='3 3 3' 
-        obj-vertex="#purplenote" 
-        rotation='260 80 0'>
-        <a-animation 
-            attribute="position"
-            from='13.3 1 22.25' \
-            to='13.3 6 22.25'
-            easing='ease-in'
-            dur='6527'
-            repeat='indefinite'>
-        </a-animation>
-    </a-entity> 
-    
-                 <!--green note
-    <a-entity 
-        position='13.3 1 23.25' 
-        scale='3 3 3' 
-        obj-vertex="#purplenote" 
-        rotation='260 80 0'>
-        <a-animation 
-            attribute="position"
-            from='13.3 1 23.25' 
-            to='13.3 6 23.25'
-            easing='ease-in'
-            dur='2527'
-            repeat='indefinite'>
-        </a-animation>
-               
-    </a-entity> 
-    
-        
-                 <!--orange note
-    <a-entity 
-        position='13.3 1 22.75' 
-        scale='3 3 3' 
-        obj-vertex="#purplenote" 
-        rotation='260 80 0'>
-        <a-animation 
-            attribute="position"
-            from='13.3 1 22.75' 
-            to='13.3 6 22.75'
-            easing='ease-in'
-            dur='8527'
-            repeat='indefinite'>
-        </a-animation>
-    </a-entity> 
-    
-                     <!--purple note
-    <a-entity 
-        position='13.3 1 23.40' 
-        scale='3 3 3' 
-        obj-vertex="#purplenote" 
-        rotation='260 80 0'>
-        <a-animation 
-            attribute="position"
-            from='13.3 1 23.40' 
-            to='13.3 6 23.40'
-            easing='ease-in'
-            dur='5527'
-            repeat='indefinite'>
-        </a-animation>
-    </a-entity> 
-    
-                         <!--yellow note
-    <a-entity 
-        position='13.3 1 23.30' 
-        scale='3 3 3' 
-        obj-vertex="#purplenote" 
-        rotation='260 80 0'>
-        <a-animation 
-            attribute="position"
-            from='13.3 1 23.30' 
-            to='13.3 6 23.30'
-            easing='ease-in'
-            dur='7127'
-            repeat='indefinite'>
-        </a-animation>
-    </a-entity> -->
-    
-              
-            
-        
-
+  
     <!--Amazing quote-->
     <a-plane src="images/rainbowroom/amazing.jpg" height="2" width="4" rotation="0 -90 0" radius="2" side="double"
              position="12.5 9.1 22.30" transparent="true">
@@ -732,7 +572,7 @@
             <a-animation attribute="opacity" from="1.0" to="0.2" duration="200" begin="mouseleave"></a-animation>
         </a-box>
     </a-entity>
-
+    
     <!--begin user two-->
     <a-plane src="images/rainbowroom/beginusertwo.png" height="3" width="2" rotation="0 -90 0" radius="2" side="double"
              position="-3.9 6.3 -5.098">
@@ -748,7 +588,9 @@
              side="double" position="-5.99 7.17 -3.65">
     </a-plane>
 
-
+<!--Credits -->
+    https://github.com/faerain/classichits/blob/master/rainbowroominfo.txt
+    
 </a-scene>
 
 
