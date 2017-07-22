@@ -718,6 +718,20 @@
             <a-animation attribute="opacity" from="1.0" to="0.2" duration="200" begin="mouseleave"></a-animation>
         </a-box>
     </a-entity>
+    
+         <!--special -->
+    <a-entity position="7.4 2 31.6">
+        <a-entity id="pc-bog" n-sound="on: bog; src: bogroomclip.ogg; rolloff: cosine; maxDistance: 6"
+            sync="own-on: bog" sync-n-sound></a-entity>
+        <a-entity id="gear-bog" n-sound="on: bog; src: bogroomclip.mp3; rolloff: cosine; maxDistance: 6"
+            sync="own-on: bog" sync-n-sound></a-entity>
+        <a-box altspace-cursor-collider="enabled: true"
+            scale="0.1 0.1 0.1" material="color: blue; transparent: true; opacity: 0.2"
+            wire="on: click; emit: bog; targets: #pc-bog, #gear-bog;">
+            <a-animation attribute="opacity" from="0.2" to="1.0" duration="200" begin="mouseenter"></a-animation>
+            <a-animation attribute="opacity" from="1.0" to="0.2" duration="200" begin="mouseleave"></a-animation>
+        </a-box>
+    </a-entity>
 
     <!--begin user two-->
     <a-plane src="images/rainbowroom/beginusertwo.png" height="3" width="2" rotation="0 -90 0" radius="2" side="double"
